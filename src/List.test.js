@@ -5,21 +5,21 @@ import List from './List';
 
 
 describe('List Component Tests', ()=> {
-  const testCards = {
-    'a': { id: 'a', title: 'First card', content: 'lorem ipsum' },
-    'b': { id: 'b', title: 'Second card', content: 'lorem ipsum' }
-  }
+  // const testCards = {
+  //   'a': { id: 'a', title: 'First card', content: 'lorem ipsum' },
+  //   'b': { id: 'b', title: 'Second card', content: 'lorem ipsum' }
+  // }
   //Smoke Test
   it('List renders correctly', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<List header='string' cards={testCards} />, div);
+    ReactDOM.render(<List  />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   //Snapshot
   it('List matches snapshot', () => {
     const tree = renderer
-      .create(<List header='string' cards={testCards} />)
+      .create(<List />)
       .toJSON();
       expect(tree).toMatchSnapshot();
   });
